@@ -5,6 +5,8 @@ import { BsArrowUpRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 // variants
 import { fadeIn } from "../variants";
+// img
+import logo1 from "../assets/Services.png";
 
 // services data
 const services = [
@@ -37,26 +39,29 @@ const services = [
 const Services = () => {
   return (
     <section className="section" id="services">
-      <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row">
+      <div className="container mx-auto px-6 lg:px-0">
+        <div className="flex flex-col lg:flex-row gap-12">
           {/* text and image */}
           <motion.div
             variants={fadeIn("right", 0.4)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 lg:bg-bottom bg-no-repeat mix-blend-lighten mb-12 lg:mb-0"
-          > 
-          
+            className="flex-1 text-center lg:text-left"
+          >
             <h2 className="h2 text-accent mb-6">What I Do.</h2>
-            <h4 className="max-w-[455px] mb-16">
+            <p className="max-w-[500px] mx-auto lg:mx-0 leading-relaxed mb-8 text-lg">
               I am a passionate and versatile professional committed to
-              delivering impactful solutions. My expertise spans
-              multiple domains, allowing me to cater to diverse client needs and
-              excel in dynamic environments.
-            </h4>
-            <img className="h-3/6 -translate-y-12 ml-8" src="src/assets/Lovepik_com-401495044-man-working-in-front-of-computer-25d-business-illustration-axono.png" alt="working" />
-            <button className="btn btn-sm -translate-y-8">See my work</button>
+              delivering impactful solutions. My expertise spans multiple
+              domains, allowing me to cater to diverse client needs and excel in
+              dynamic environments.
+            </p>
+            <img
+              className="h-52 lg:h-64 mx-auto lg:mx-0 -translate-y-6"
+              src={logo1}
+              alt="Services Overview"
+            />
+            <button className="btn btn-sm mt-6">See my work</button>
           </motion.div>
           {/* services */}
           <motion.div
@@ -69,29 +74,28 @@ const Services = () => {
             {/* services list */}
             <div>
               {services.map((service, index) => {
-                // destructure service
                 const { name, description, link } = service;
                 return (
                   <div
-                    className="border-b border-white/20 h-[146px] mb-[38px] flex"
+                    className="border-b border-white/20 pb-8 flex flex-col lg:flex-row justify-between gap-8"
                     key={index}
                   >
-                    <div className="max-w-[476px]">
-                      <h4 className="text-[20px] tracking-wider font-primary font-semibold mb-6">
-                        {name}
-                      </h4>
-                      <p className="font-secondary leading-tight">
-                        {description}
-                      </p>
+                    <div className="lg:max-w-[476px]">
+                      <h4 className="text-xl font-semibold mb-4">{name}</h4>
+                      <p className="text-md leading-relaxed">{description}</p>
                     </div>
-                    <div className="flex flex-col flex-1 items-end">
+                    <div className="flex items-center lg:items-end">
                       <a
                         href="#"
-                        className="btn w-9 h-9 mb-[42px] flex justify-center"
+                        className="btn w-12 h-12 flex items-center justify-center hover:bg-accent transition"
+                        aria-label={`Learn more about ${name}`}
                       >
                         <BsArrowUpRight />
                       </a>
-                      <a href="#" className="text-gradient text-sm">
+                      <a
+                        href="#"
+                        className="ml-4 text-sm text-accent hover:underline"
+                      >
                         {link}
                       </a>
                     </div>

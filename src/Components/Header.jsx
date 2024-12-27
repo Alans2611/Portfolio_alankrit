@@ -1,20 +1,24 @@
-import React from 'react';
+import React from "react";
 //images
-import Logo from '../assets/Alankrit-removebg-preview.png';
+import Logo from "../assets/Alankrit-removebg-preview.png";
 
 const Header = () => {
-  return <header className="px-2 translate-y-5 mb-0">
-    <div className="container mx-auto">
-      <div className='flex justify-between items-center'>
-          {/*logo*/}
-          <a href='#'>
-            <img className='h-36' src={Logo} alt=''/>
+  return (
+    <header className="px-4 py-4 md:py-6 lg:py-8 translate-y-2 mb-0">
+      <div className="container mx-auto">
+        <div className="flex flex-wrap justify-between items-center">
+          {/* Logo */}
+          <a href="#" className="flex-shrink-0">
+            <img className="h-[clamp(6rem,10vw,9rem)]" src={Logo} alt="Logo" />
           </a>
-          {/*button*/}
-          <button className='btn btn-sn'>Work with me</button>
+          {/* Button */}
+          <button className="btn btn-sm md:btn-md lg:btn-lg mt-4 md:mt-0">
+            Work with me
+          </button>
+        </div>
       </div>
-    </div>
-  </header>;
+    </header>
+  );
 };
 
 export default Header;

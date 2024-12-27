@@ -2,7 +2,6 @@ import React from "react";
 //images
 import Image from "../assets/banner_img.png"
 //icons
-
 import {
   FaGithub,
   FaYoutube,
@@ -16,6 +15,9 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 //variants
 import { fadeIn } from "../variants";
+//resume
+import resume from "../assets/Alankrit_Updated_resume.pdf";
+
 const Banner = () => {
   return (
     <section
@@ -81,7 +83,7 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0"
             >
-              <a href="src/assets/Alankrit_Updated_resume.pdf" dowload className="text-gradient btn-link">
+              <a href={resume} download className="text-gradient btn-link">
               <button className="btn btn-lg">Download Resume</button>
               </a>
               <a href="#contact" className="text-gradient btn-link">
